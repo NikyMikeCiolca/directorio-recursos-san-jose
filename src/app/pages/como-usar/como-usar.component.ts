@@ -17,12 +17,12 @@ export class ComoUsarComponent {
   readonly pasos: Paso[] = [
     {
       titulo: 'Entra en Inicio y decide cómo buscar',
-      texto: 'Si ya sabes lo que necesitas, escríbelo en el buscador. Si no, elige una categoría o un colectivo de la portada.',
+      texto: 'Si ya sabes lo que necesitas, escríbelo en el buscador. Si no, elige un área o un colectivo de la portada.',
       detalle: 'Por ejemplo: «empleo», «vivienda» o el nombre de una entidad.'
     },
     {
       titulo: 'Ajusta los filtros en Recursos',
-      texto: 'En la página Recursos puedes combinar el buscador con los filtros de Categoría (de qué se ocupa el recurso) y Colectivo (a quién se dirige).',
+      texto: 'En la página Recursos puedes combinar el buscador con los filtros de Área (de qué se ocupa el recurso) y Colectivo (a quién se dirige).',
       detalle: 'Si no te convence el resultado, pulsa «Limpiar» para empezar de nuevo.'
     },
     {
@@ -31,7 +31,7 @@ export class ComoUsarComponent {
     },
     {
       titulo: 'Abre el recurso que te interese',
-      texto: 'Pulsa «Consultar recurso» para ver su ficha: descripción, categorías, destinatarios y datos de contacto de la entidad.'
+      texto: 'Pulsa «Consultar recurso» para ver su ficha: descripción, áreas, destinatarios y datos de contacto de la entidad.'
     },
     {
       titulo: 'Confirma los detalles con la entidad',
@@ -43,7 +43,7 @@ export class ComoUsarComponent {
     {
       nombre: 'Inicio',
       ruta: '/',
-      texto: 'Buscador y accesos rápidos por categorías y colectivos.'
+      texto: 'Buscador y accesos rápidos por áreas y colectivos.'
     },
     {
       nombre: 'Recursos',
@@ -51,8 +51,8 @@ export class ComoUsarComponent {
       texto: 'Lista completa con buscador y filtros.'
     },
     {
-      nombre: 'Categorías',
-      ruta: '/categorias',
+      nombre: 'Áreas',
+      ruta: '/areas',
       texto: 'Explica de qué se ocupa cada ámbito y qué recursos incluye.'
     },
     {

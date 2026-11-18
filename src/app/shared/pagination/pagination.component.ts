@@ -20,7 +20,7 @@ export class PaginationComponent {
 
   readonly pager = input.required<PagerControls>();
 
-  /** Sustantivo en plural para los textos: "recursos", "categorías"... */
+  /** Sustantivo en plural para los textos: "recursos", "áreas"... */
   readonly noun = input('resultados');
 
   /** Elemento al que llevar el foco al cambiar de página. */
