@@ -1,0 +1,265 @@
+.guide-page {
+    width: min(100% - 48px, 920px);
+    margin: 0 auto;
+    padding: 56px 0 72px;
+}
+
+.guide-header {
+    margin-bottom: 40px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--primary-light);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.guide-header h1 {
+    margin: 12px 0;
+    font-size: clamp(30px, 4vw, 42px);
+    letter-spacing: -1px;
+}
+
+.guide-header p {
+    max-width: 650px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.guide-section {
+    margin-bottom: 48px;
+}
+
+.guide-section h2 {
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+.section-intro {
+    color: var(--text-secondary);
+}
+
+/* ---- Esquema ---- */
+.flow {
+    margin: 0;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.flow img {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.flow figcaption {
+    margin-top: 14px;
+    text-align: center;
+}
+
+.download {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ---- Pasos ---- */
+.steps {
+    display: grid;
+    gap: 14px;
+    margin: 0 0 26px;
+    padding: 0;
+    list-style: none;
+    counter-reset: paso;
+}
+
+.step {
+    position: relative;
+    padding: 20px 22px 20px 72px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    counter-increment: paso;
+}
+
+.step::before {
+    content: counter(paso);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    color: #ffffff;
+    background: var(--primary);
+    border-radius: 50%;
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.step h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.step p {
+    margin-bottom: 0;
+    color: var(--text-secondary);
+}
+
+.step .step__hint {
+    margin-top: 6px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ---- Botones ---- */
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 11px 22px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.btn--primary {
+    color: #ffffff;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.btn--primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn--secondary {
+    color: var(--primary);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+}
+
+.btn--secondary:hover {
+    background: var(--surface-soft);
+}
+
+/* ---- Menú ---- */
+.sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sections li {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.sections a {
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.sections span {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+/* ---- Términos ---- */
+.terms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 14px;
+    margin: 0;
+}
+
+.terms div {
+    padding: 18px 20px;
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+}
+
+.terms dt {
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-weight: 700;
+}
+
+.terms dd {
+    margin: 4px 0 0;
+    color: var(--text-secondary);
+}
+
+/* ---- Consejos y ayuda ---- */
+.tips {
+    margin: 0 0 24px;
+    padding-left: 22px;
+    color: var(--text-secondary);
+}
+
+.tips li {
+    margin-bottom: 6px;
+}
+
+.help-box {
+    padding: 22px 24px;
+    background: var(--accent-light);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-lg);
+}
+
+.help-box h3 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.help-box p {
+    color: var(--text);
+}
+
+.help-box a {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    .guide-page {
+        width: calc(100% - 32px);
+        padding: 36px 0 48px;
+    }
+
+    .step {
+        padding: 18px 18px 18px 64px;
+    }
+
+    .step::before {
+        left: 16px;
+    }
+}

@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1120" width="820" height="1120">
+  <defs>
+    <style>
+      .bg { fill: #F4F5F2; }
+      .pill-dark { fill: #193A32; }
+      .text-pill { fill: #FFFFFF; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+      .diamond { fill: #F8EBDC; stroke: #B67D3C; stroke-width: 1.8; }
+      .box { fill: #FFFFFF; stroke: #B5C2BC; stroke-width: 1.5; }
+      .badge { fill: #FFFFFF; stroke: #B67D3C; stroke-width: 1.5; }
+      .text-badge { fill: #2B3A35; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 11px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+      .text-title { fill: #23302C; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 700; text-anchor: middle; }
+      .text-sub { fill: #63736E; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 12.5px; font-weight: 400; text-anchor: middle; }
+      .text-diamond { fill: #23302C; font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 15.5px; font-weight: 700; text-anchor: middle; dominant-baseline: central; }
+      .line { fill: none; stroke: #23493E; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+      .arrow { fill: #23493E; }
+    </style>
+  </defs>
+
+  <!-- Fondo -->
+  <rect class="bg" width="820" height="1120" />
+
+  <!-- 1. Entra en el Directorio Social -->
+  <rect class="pill-dark" x="260" y="22" width="300" height="48" rx="24" />
+  <text class="text-pill" x="410" y="46">Entra en el Directorio Social</text>
+
+  <!-- Flecha 1 -> Rombo 1 -->
+  <line class="line" x1="410" y1="70" x2="410" y2="96" />
+  <polygon class="arrow" points="410,104 403,90 417,90" />
+
+  <!-- 2. Rombo: ¿Sabes qué buscas? -->
+  <polygon class="diamond" points="410,104 550,152 410,200 270,152" />
+  <text class="text-diamond" x="410" y="152">¿Sabes qué buscas?</text>
+
+  <!-- Rama Izquierda (Sí) -->
+  <polyline class="line" points="270,152 186,152 186,232" />
+  <polygon class="arrow" points="186,240 179,226 193,226" />
+  <rect class="badge" x="210" y="141" width="30" height="21" rx="10.5" />
+  <text class="text-badge" x="225" y="151.5">Sí</text>
+
+  <!-- Rama Derecha (No) -->
+  <polyline class="line" points="550,152 634,152 634,232" />
+  <polygon class="arrow" points="634,240 627,226 641,226" />
+  <rect class="badge" x="582" y="141" width="30" height="21" rx="10.5" />
+  <text class="text-badge" x="597" y="151.5">No</text>
+
+  <!-- 3A. Escribe tu necesidad -->
+  <rect class="box" x="45" y="240" width="283" height="72" rx="12" />
+  <text class="text-title" x="186.5" y="272">Escribe tu necesidad</text>
+  <text class="text-sub" x="186.5" y="292">en el buscador (Inicio o Recursos)</text>
+
+  <!-- 3B. Elige una categoría o colectivo -->
+  <rect class="box" x="492" y="240" width="283" height="72" rx="12" />
+  <text class="text-title" x="633.5" y="272">Elige una categoría o colectivo</text>
+  <text class="text-sub" x="633.5" y="292">en Inicio (los menús explican cada una)</text>
+
+  <!-- Unión de ramas -> Caja 4 -->
+  <polyline class="line" points="186,312 186,342 634,342 634,312" />
+  <line class="line" x1="410" y1="342" x2="410" y2="372" />
+  <polygon class="arrow" points="410,380 403,366 417,366" />
+
+  <!-- 4. Página Recursos: ajusta los filtros -->
+  <rect class="box" x="239" y="380" width="342" height="72" rx="12" />
+  <text class="text-title" x="410" y="412">Página Recursos: ajusta los filtros</text>
+  <text class="text-sub" x="410" y="432">Categoría · Colectivo · Limpiar</text>
+
+  <!-- Flecha 4 -> 5 -->
+  <line class="line" x1="410" y1="452" x2="410" y2="480" />
+  <polygon class="arrow" points="410,488 403,474 417,474" />
+
+  <!-- 5. Revisa los resultados -->
+  <rect class="box" x="239" y="488" width="342" height="72" rx="12" />
+  <text class="text-title" x="410" y="514">Revisa los resultados</text>
+  <text class="text-sub" x="410" y="532">Ordenador: se cargan más al bajar</text>
+  <text class="text-sub" x="410" y="549">Móvil: botones de página</text>
+
+  <!-- Flecha 5 -> Rombo 2 -->
+  <line class="line" x1="410" y1="560" x2="410" y2="588" />
+  <polygon class="arrow" points="410,596 403,582 417,582" />
+
+  <!-- 6. Rombo: ¿Encuentras algo útil? -->
+  <polygon class="diamond" points="410,596 550,644 410,692 270,644" />
+  <text class="text-diamond" x="410" y="644">¿Encuentras algo útil?</text>
+
+  <!-- Rama Izquierda (No) -> Cambia las palabras -->
+  <line class="line" x1="270" y1="644" x2="232" y2="644" />
+  <polygon class="arrow" points="224,644 238,637 238,651" />
+  <rect class="badge" x="231" y="608" width="30" height="21" rx="10.5" />
+  <text class="text-badge" x="246" y="618.5">No</text>
+
+  <!-- 6B. Cambia las palabras -->
+  <rect class="box" x="15" y="608" width="209" height="72" rx="12" />
+  <text class="text-title" x="119.5" y="640">Cambia las palabras</text>
+  <text class="text-sub" x="119.5" y="659">o pulsa «Limpiar»</text>
+
+  <!-- Bucle de retorno a Página Recursos -->
+  <polyline class="line" points="119.5,608 119.5,416 231,416" />
+  <polygon class="arrow" points="239,416 225,409 225,423" />
+
+  <!-- Rama Inferior (Sí) -->
+  <line class="line" x1="410" y1="692" x2="410" y2="736" />
+  <polygon class="arrow" points="410,744 403,730 417,730" />
+  <rect class="badge" x="411" y="704" width="30" height="21" rx="10.5" />
+  <text class="text-badge" x="426" y="714.5">Sí</text>
+
+  <!-- 7. Pulsa «Consultar recurso» -->
+  <rect class="box" x="261" y="744" width="298" height="52" rx="12" />
+  <text class="text-title" x="410" y="775">Pulsa «Consultar recurso»</text>
+
+  <!-- Flecha 7 -> 8 -->
+  <line class="line" x1="410" y1="796" x2="410" y2="820" />
+  <polygon class="arrow" points="410,828 403,814 417,814" />
+
+  <!-- 8. Lee la ficha del recurso -->
+  <rect class="box" x="231" y="828" width="358" height="72" rx="12" />
+  <text class="text-title" x="410" y="860">Lee la ficha del recurso</text>
+  <text class="text-sub" x="410" y="880">Categorías, destinatarios y contacto</text>
+
+  <!-- Flecha 8 -> 9 -->
+  <line class="line" x1="410" y1="900" x2="410" y2="924" />
+  <polygon class="arrow" points="410,932 403,918 417,918" />
+
+  <!-- 9. Entra en la web de la entidad -->
+  <rect class="box" x="231" y="932" width="358" height="72" rx="12" />
+  <text class="text-title" x="410" y="964">Entra en la web de la entidad</text>
+  <text class="text-sub" x="410" y="984">y confirma horarios y requisitos</text>
+
+  <!-- Flecha 9 -> 10 -->
+  <line class="line" x1="410" y1="1004" x2="410" y2="1028" />
+  <polygon class="arrow" points="410,1036 403,1022 417,1022" />
+
+  <!-- 10. Contacta con la entidad -->
+  <rect class="pill-dark" x="260" y="1036" width="300" height="48" rx="24" />
+  <text class="text-pill" x="410" y="1060">Contacta con la entidad</text>
+</svg>

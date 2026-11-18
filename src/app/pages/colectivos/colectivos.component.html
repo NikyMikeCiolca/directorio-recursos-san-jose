@@ -1,0 +1,134 @@
+<main class="catalog-page">
+
+    <header class="catalog-hero">
+
+        <div class="container">
+
+            <span class="eyebrow">
+                DIRECTORIO SOCIAL
+            </span>
+
+            <h1>Atención por colectivos</h1>
+
+            <p>
+                Conoce los diferentes grupos de población a los que
+                se dirigen los servicios y recursos sociales.
+            </p>
+
+            <div class="catalog-counter">
+                <i class="bi bi-people"></i>
+                {{ colectivos().length }} colectivos disponibles
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="catalog-content container">
+
+        <div class="intro">
+
+            <span class="eyebrow">PERSONAS DESTINATARIAS</span>
+
+            <h2 #listTop tabindex="-1">Explora los colectivos</h2>
+
+            <p>
+                Consulta información sobre cada colectivo y encuentra
+                los recursos relacionados con sus necesidades de atención.
+            </p>
+
+        </div>
+
+        <div class="catalog-grid">
+
+            @for (colectivo of pager.visible(); track colectivo.id) {
+
+            <article class="catalog-card">
+
+                <div class="card-icon">
+                    <i [class]="'bi ' + colectivo.info.icono"></i>
+                </div>
+
+                <div class="card-body">
+
+                    <h3>{{ colectivo.nombre }}</h3>
+
+                    <p class="description">
+                        {{ colectivo.info.descripcion }}
+                    </p>
+
+                    <div class="scope">
+
+                        <span>Ámbito de atención</span>
+
+                        <p>{{ colectivo.info.ambito }}</p>
+
+                    </div>
+
+                    <div class="resource-count">
+                        <i class="bi bi-journal-text"></i>
+
+                        {{ colectivo.servicios.length }}
+
+                        {{ colectivo.servicios.length === 1
+                        ? 'recurso relacionado'
+                        : 'recursos relacionados' }}
+                    </div>
+
+                    @if (colectivo.servicios.length > 0) {
+
+                    <div class="related-resources">
+
+                        <h4>Recursos disponibles</h4>
+
+                        @for (servicio of colectivo.servicios; track servicio.id) {
+
+                        <a [routerLink]="['/recursos', servicio.id]">
+                            {{ servicio.nombre }}
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+
+                        }
+
+                    </div>
+
+                    }
+
+                    @if (colectivo.info) {
+
+                    <div class="legal-reference">
+
+                        <span>
+                            <i class="bi bi-bank"></i>
+                            Referencia normativa
+                        </span>
+
+                        <p>{{ colectivo.info.fuente }}</p>
+
+                        <small>{{ colectivo.info.referencia }}</small>
+
+                        <a [href]="colectivo.info.url" target="_blank" rel="noopener noreferrer">
+
+                            Consultar en el BOE
+
+                            <i class="bi bi-box-arrow-up-right"></i>
+
+                        </a>
+
+                    </div>
+
+                    }
+
+                </div>
+
+            </article>
+
+            }
+
+        </div>
+
+        <app-pagination [pager]="pager" noun="colectivos" [anchor]="listTop" />
+
+    </section>
+
+</main>

@@ -1,0 +1,51 @@
+<header class="navbar">
+
+    <div class="navbar__container">
+
+        <a routerLink="/" class="navbar__logo" aria-label="Directorio Social, página de inicio">
+
+            <span class="navbar__logo-icon" aria-hidden="true">
+                <i class="bi bi-people-fill"></i>
+            </span>
+
+            <span>Directorio de recursos | San José</span>
+
+        </a>
+
+        <button class="navbar__toggle" type="button" (click)="menuAbierto = !menuAbierto"
+            [attr.aria-expanded]="menuAbierto" aria-controls="navbar-menu" aria-label="Abrir o cerrar el menú">
+
+            <i class="bi" [class.bi-list]="!menuAbierto" [class.bi-x-lg]="menuAbierto" aria-hidden="true">
+            </i>
+
+        </button>
+
+        <nav id="navbar-menu" class="navbar__links" [class.navbar__links--open]="menuAbierto"
+            aria-label="Navegación principal">
+
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                (click)="menuAbierto = false">
+                Inicio
+            </a>
+
+            <a routerLink="/recursos" routerLinkActive="active" (click)="menuAbierto = false">
+                Recursos
+            </a>
+
+            <a routerLink="/categorias" routerLinkActive="active" (click)="menuAbierto = false">
+                Categorías
+            </a>
+
+            <a routerLink="/colectivos" routerLinkActive="active" (click)="menuAbierto = false">
+                Colectivos
+            </a>
+
+            <a routerLink="/como-usar-la-web" routerLinkActive="active" (click)="menuAbierto = false">
+                Cómo usar
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>

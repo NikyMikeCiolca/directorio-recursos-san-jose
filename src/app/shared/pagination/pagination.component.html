@@ -1,0 +1,64 @@
+@if (pager().total() > 0) {
+
+@if (pager().compact()) {
+
+@if (pager().totalPages() > 1) {
+<nav class="pager" [attr.aria-label]="'Paginación de ' + noun()">
+
+    <button type="button" class="pager__nav" [disabled]="pager().currentPage() === 1"
+        (click)="goTo(pager().currentPage() - 1)">
+        <span aria-hidden="true">←</span>
+        Anterior
+    </button>
+
+    <ul class="pager__pages">
+        @for (item of pages(); track item.key) {
+        @if (item.page === null) {
+        <li class="pager__gap" aria-hidden="true">…</li>
+        } @else {
+        <li>
+            <button type="button" class="pager__page" [class.is-current]="item.page === pager().currentPage()"
+                [attr.aria-current]="item.page === pager().currentPage() ? 'page' : null"
+                [attr.aria-label]="'Página ' + item.page" (click)="goTo(item.page)">
+                {{ item.page }}
+            </button>
+        </li>
+        }
+        }
+    </ul>
+
+    <button type="button" class="pager__nav" [disabled]="pager().currentPage() === pager().totalPages()"
+        (click)="goTo(pager().currentPage() + 1)">
+        Siguiente
+        <span aria-hidden="true">→</span>
+    </button>
+
+</nav>
+}
+
+<p class="pager__status" role="status">
+    Página {{ pager().currentPage() }} de {{ pager().totalPages() }}
+    · {{ pager().total() }} {{ noun() }}
+</p>
+
+} @else {
+
+<div class="more">
+
+    <p class="pager__status" role="status">
+        Mostrando {{ pager().visibleCount() }} de {{ pager().total() }} {{ noun() }}
+    </p>
+
+    @if (pager().hasMore()) {
+    <div class="more__sentinel" appInView (inView)="pager().loadMore()" aria-hidden="true"></div>
+
+    <button type="button" class="more__button" (click)="pager().loadMore()">
+        Cargar más {{ noun() }}
+    </button>
+    }
+
+</div>
+
+}
+
+}

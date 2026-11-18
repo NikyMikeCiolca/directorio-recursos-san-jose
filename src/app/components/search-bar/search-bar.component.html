@@ -1,0 +1,10 @@
+<div class="search-container">
+
+    <input type="search" [placeholder]="placeholder()" [value]="term()" (input)="term.set($any($event.target).value)"
+        (keyup.enter)="onSearch()" aria-label="Buscar recursos" />
+
+    <button type="button" (click)="onSearch()">
+        Buscar
+    </button>
+
+</div>

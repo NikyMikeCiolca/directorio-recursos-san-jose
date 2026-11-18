@@ -1,0 +1,47 @@
+<aside class="filters">
+
+    <div class="filters-heading">
+        <h3>Filtros</h3>
+
+        <button type="button" (click)="clear.emit()">
+            Limpiar
+        </button>
+    </div>
+
+    <div class="filter-group">
+
+        <label for="category-filter">Categoría</label>
+
+        <select id="category-filter" [value]="selectedCategory()"
+            (change)="categoryChange.emit($any($event.target).value)">
+            <option value="">Todas las categorías</option>
+
+            @for (categoria of categorias(); track categoria.id) {
+            <option [value]="categoria.id">
+                {{ categoria.nombre }}
+            </option>
+            }
+
+        </select>
+
+    </div>
+
+    <div class="filter-group">
+
+        <label for="collective-filter">Colectivo</label>
+
+        <select id="collective-filter" [value]="selectedCollective()"
+            (change)="collectiveChange.emit($any($event.target).value)">
+            <option value="">Todos los colectivos</option>
+
+            @for (colectivo of colectivos(); track colectivo.id) {
+            <option [value]="colectivo.id">
+                {{ colectivo.nombre }}
+            </option>
+            }
+
+        </select>
+
+    </div>
+
+</aside>

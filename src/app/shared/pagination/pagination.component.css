@@ -1,0 +1,118 @@
+:host {
+    display: block;
+    margin-top: 28px;
+}
+
+/* ---- Estado ("Mostrando 6 de 12") ---- */
+.pager__status {
+    margin: 14px 0 0;
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-align: center;
+}
+
+/* ---- Cargar más (pantallas anchas) ---- */
+.more {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.more .pager__status {
+    margin: 0 0 14px;
+}
+
+/* Detecta la llegada al final sin ocupar espacio ni desplazar nada. */
+.more__sentinel {
+    width: 100%;
+    height: 1px;
+    margin-top: -1px;
+    pointer-events: none;
+}
+
+.more__button {
+    min-height: 46px;
+    padding: 11px 26px;
+    color: var(--primary);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.more__button:hover {
+    background: var(--surface-soft);
+    border-color: var(--primary-light);
+}
+
+/* ---- Paginación (móvil) ---- */
+.pager {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.pager__pages {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.pager__gap {
+    min-width: 20px;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.pager__page,
+.pager__nav {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 8px 14px;
+    color: var(--primary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.pager__page:hover:not(.is-current),
+.pager__nav:hover:not(:disabled) {
+    background: var(--surface-soft);
+    border-color: var(--border-strong);
+}
+
+.pager__page.is-current {
+    color: #ffffff;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.pager__nav:disabled {
+    color: var(--text-muted);
+    background: var(--surface-soft);
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* En pantallas muy estrechas: solo anterior / siguiente y el estado. */
+@media (max-width: 440px) {
+    .pager {
+        justify-content: space-between;
+    }
+
+    .pager__pages {
+        display: none;
+    }
+
+    .pager__nav {
+        flex: 1 1 0;
+    }
+}

@@ -1,0 +1,27 @@
+<section class="collective-section">
+
+    <div class="section-heading">
+        <div class="heading-content">
+            <span class="eyebrow">ATENCIÓN POR COLECTIVOS</span>
+
+            <h2>Explora por colectivos</h2>
+
+            <p>
+                Encuentra servicios y recursos adaptados a las
+                necesidades de cada colectivo.
+            </p>
+        </div>
+    </div>
+
+    <div class="collective-list">
+
+        @for (colectivo of colectivos(); track colectivo.id) {
+        <button type="button" class="collective-card" (click)="navigateToCollective(colectivo.id)">
+            <span>{{ colectivo.nombre }}</span>
+            <span class="arrow">→</span>
+        </button>
+        }
+
+    </div>
+
+</section>

@@ -1,0 +1,120 @@
+<main class="catalog-page">
+
+    <header class="catalog-hero">
+
+        <div class="container">
+
+            <span class="eyebrow">
+                DIRECTORIO SOCIAL
+            </span>
+
+            <h1>Ámbitos de atención social</h1>
+
+            <p>
+                Conoce las diferentes áreas en las que se organizan
+                los recursos y servicios disponibles en el directorio.
+            </p>
+
+            <div class="catalog-counter">
+                <i class="bi bi-grid"></i>
+                {{ categorias().length }} categorías disponibles
+            </div>
+
+        </div>
+
+    </header>
+
+    <section class="catalog-content container">
+
+        <div class="intro">
+            <span class="eyebrow">CATÁLOGO INFORMATIVO</span>
+
+            <h2 #listTop tabindex="-1">Explora las categorías</h2>
+
+            <p>
+                Cada categoría agrupa recursos según el ámbito
+                de atención al que pertenecen.
+            </p>
+        </div>
+
+        <div class="catalog-grid">
+
+            @for (categoria of pager.visible(); track categoria.id) {
+
+            <article class="catalog-card">
+
+                <div class="card-icon">
+                    <i [class]="'bi ' + categoria.info.icono"></i>
+                </div>
+
+                <div class="card-body">
+
+                    <h3>{{ categoria.nombre }}</h3>
+
+                    <p class="description">
+                        {{ categoria.info.descripcion }}
+                    </p>
+
+                    <div class="scope">
+                        <span>Ámbito de atención</span>
+                        <p>{{ categoria.info.ambito }}</p>
+                    </div>
+
+                    <div class="resource-count">
+                        <i class="bi bi-journal-text"></i>
+                        {{ categoria.servicios.length }}
+                        {{ categoria.servicios.length === 1 ? 'recurso relacionado' : 'recursos relacionados' }}
+                    </div>
+
+                    @if (categoria.servicios.length > 0) {
+
+                    <div class="related-resources">
+
+                        <h4>Recursos disponibles</h4>
+
+                        @for (servicio of categoria.servicios; track servicio.id) {
+                        <a [routerLink]="['/recursos', servicio.id]">
+                            {{ servicio.nombre }}
+                            <i class="bi bi-arrow-up-right"></i>
+                        </a>
+                        }
+
+                    </div>
+
+                    }
+
+                    @if (categoria.info) {
+
+                    <div class="legal-reference">
+
+                        <span>
+                            <i class="bi bi-bank"></i>
+                            Referencia normativa
+                        </span>
+
+                        <p>{{ categoria.info.fuente }}</p>
+
+                        <small>{{ categoria.info.referencia }}</small>
+
+                        <a [href]="categoria.info.url" target="_blank" rel="noopener noreferrer">
+                            Consultar en el BOE
+                            <i class="bi bi-box-arrow-up-right"></i>
+                        </a>
+
+                    </div>
+
+                    }
+
+                </div>
+
+            </article>
+
+            }
+
+        </div>
+
+        <app-pagination [pager]="pager" noun="categorías" [anchor]="listTop" />
+
+    </section>
+
+</main>

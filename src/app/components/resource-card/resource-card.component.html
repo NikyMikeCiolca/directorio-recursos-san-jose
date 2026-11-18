@@ -1,0 +1,40 @@
+<article class="resource-card">
+
+    <div class="resource-content">
+
+        <span class="entity-name">
+            {{ entidad()?.nombre }}
+        </span>
+
+        <h3>{{ resource().nombre }}</h3>
+
+        <p>{{ resource().descripcion }}</p>
+
+        <div class="tags">
+
+            @for (categoria of categorias(); track categoria.id) {
+            <span class="tag category-tag">
+                {{ categoria.nombre }}
+            </span>
+            }
+
+            @for (colectivo of colectivos(); track colectivo.id) {
+            <span class="tag">
+                {{ colectivo.nombre }}
+            </span>
+            }
+
+        </div>
+
+    </div>
+
+    <div class="resource-footer">
+
+        <a [routerLink]="['/recursos', resource().id]">
+            Consultar recurso
+            <span>→</span>
+        </a>
+
+    </div>
+
+</article>

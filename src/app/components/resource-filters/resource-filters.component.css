@@ -1,0 +1,50 @@
+.filters {
+    background: white;
+    border: 1px solid #e1e7e2;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.filters-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.filters-heading h3 {
+    color: #173b35;
+    font-size: 17px;
+    margin: 0;
+}
+
+.filters-heading button {
+    border: none;
+    background: none;
+    color: #527267;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-bottom: 20px;
+}
+
+.filter-group label {
+    font-size: 13px;
+    color: #26342f;
+    font-weight: 600;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dce4de;
+    border-radius: 8px;
+    background: white;
+    color: #52615a;
+    font-size: 13px;
+}

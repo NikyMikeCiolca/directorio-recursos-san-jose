@@ -1,0 +1,232 @@
+.catalog-page {
+    min-height: 70vh;
+    padding-bottom: 70px;
+}
+
+.container {
+    width: min(100% - 48px, var(--container-width));
+    margin-inline: auto;
+}
+
+.catalog-hero {
+    padding: 65px 0 55px;
+    background: linear-gradient(120deg, #edf3ed, #f8f9f6);
+    border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+    color: var(--primary-light);
+    font-size: 11px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+}
+
+.catalog-hero h1 {
+    margin: 12px 0;
+    font-size: clamp(32px, 5vw, 46px);
+    letter-spacing: -1.5px;
+}
+
+.catalog-hero p {
+    max-width: 650px;
+    color: var(--text-secondary);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.catalog-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 12px;
+    color: var(--primary-light);
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.catalog-content {
+    padding-top: 48px;
+}
+
+.intro {
+    margin-bottom: 28px;
+}
+
+.intro h2 {
+    margin: 6px 0;
+    font-size: 27px;
+}
+
+.intro p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.catalog-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.catalog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-icon {
+    width: 58px;
+    height: 58px;
+    margin: 24px 24px 0;
+    display: grid;
+    place-items: center;
+    color: var(--primary-light);
+    background: var(--surface-soft);
+    border-radius: 15px;
+    font-size: 27px;
+}
+
+.card-body {
+    padding: 18px 24px 24px;
+}
+
+.card-body h3 {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.description {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.75;
+    min-height: 75px;
+}
+
+.scope {
+    padding: 13px;
+    margin: 18px 0;
+    background: #f7f9f6;
+    border-radius: var(--radius-md);
+}
+
+.scope span {
+    color: var(--primary-light);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+}
+
+.scope p {
+    margin: 5px 0 0;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.resource-count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary-light);
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.related-resources {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 18px;
+    margin-top: 18px;
+    border-top: 1px solid var(--border);
+}
+
+.related-resources h4 {
+    margin: 0 0 3px;
+    font-size: 14px;
+}
+
+.related-resources a {
+    display: flex;
+    justify-content: space-between;
+    color: var(--primary-light);
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.related-resources a:hover {
+    text-decoration: underline;
+}
+
+.legal-reference {
+    padding-top: 18px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.legal-reference>span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.legal-reference p {
+    margin: 9px 0 3px;
+    color: var(--text-secondary);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.legal-reference small {
+    display: block;
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.legal-reference a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-top: 12px;
+    color: var(--primary-light);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+@media (max-width: 750px) {
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .description {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: calc(100% - 32px);
+    }
+
+    .catalog-hero {
+        padding: 45px 0;
+    }
+
+    .catalog-content {
+        padding-top: 35px;
+    }
+}

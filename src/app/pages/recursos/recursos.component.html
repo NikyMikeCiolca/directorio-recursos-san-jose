@@ -1,0 +1,67 @@
+<main class="resources-page">
+
+    <header class="page-header">
+        <span class="eyebrow">DIRECTORIO</span>
+        <h1>Buscar recursos</h1>
+        <p>
+            Encuentra servicios y entidades según tus necesidades.
+        </p>
+    </header>
+
+    <div class="search-area">
+        <input type="search" placeholder="Buscar por servicio, entidad o necesidad..." [value]="searchTerm()"
+            (input)="searchTerm.set($any($event.target).value)" />
+    </div>
+
+    <div class="results-layout">
+
+        <app-resource-filters [categorias]="categorias()" [colectivos]="colectivos()"
+            [selectedCategory]="selectedCategory()" [selectedCollective]="selectedCollective()"
+            (categoryChange)="onCategoryChange($event)" (collectiveChange)="onCollectiveChange($event)"
+            (clear)="clearFilters()" />
+
+        <section class="results">
+
+            <div class="results-heading">
+                <h2 #resultsTop tabindex="-1">Resultados</h2>
+
+                <span>
+                    {{ filteredResources().length }}
+                    recursos encontrados
+                </span>
+            </div>
+
+            @if (filteredResources().length > 0) {
+
+            <div class="resource-list">
+
+                @for (resource of pager.visible(); track resource.id) {
+                <app-resource-card [resource]="resource" />
+                }
+
+            </div>
+
+            <app-pagination [pager]="pager" noun="recursos" [anchor]="resultsTop" />
+
+            } @else {
+
+            <div class="empty-state">
+                <h3>No se encontraron recursos</h3>
+
+                <p>
+                    Prueba a modificar los términos de búsqueda
+                    o los filtros seleccionados.
+                </p>
+
+                <button type="button" (click)="clearFilters()">
+                    Limpiar filtros
+                </button>
+            </div>
+
+            }
+
+        </section>
+
+    </div>
+
+</main>

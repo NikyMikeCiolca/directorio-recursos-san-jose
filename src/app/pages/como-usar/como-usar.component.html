@@ -1,0 +1,100 @@
+<main class="guide-page">
+
+    <header class="guide-header">
+        <span class="eyebrow">GUÍA</span>
+        <h1>Cómo usar la web</h1>
+        <p>
+            Esta web reúne los recursos sociales del barrio de San José (Zaragoza).
+            En unos pocos pasos puedes encontrar el que necesitas.
+        </p>
+    </header>
+
+    <section class="guide-section" aria-labelledby="flujo-titulo">
+
+        <h2 id="flujo-titulo">Resumen en un esquema</h2>
+
+        <figure class="flow">
+            <img src="/img/flujo-uso-web.svg" width="1100" height="1640" loading="lazy" decoding="async"
+                alt="Esquema del recorrido para usar la web, de la entrada a la web hasta contactar con la entidad. Tienes la versión en texto en la lista de pasos de más abajo." />
+
+            <figcaption>
+                <a class="download" href="/img/flujo-uso-web.png" download="flujo-uso-del-directorio.png">
+                    Descargar el esquema (PNG)
+                </a>
+            </figcaption>
+        </figure>
+
+    </section>
+
+    <section class="guide-section" aria-labelledby="pasos-titulo">
+
+        <h2 id="pasos-titulo">Paso a paso</h2>
+
+        <ol class="steps">
+            @for (paso of pasos; track paso.titulo) {
+            <li class="step">
+                <h3>{{ paso.titulo }}</h3>
+                <p>{{ paso.texto }}</p>
+                @if (paso.detalle) {
+                <p class="step__hint">{{ paso.detalle }}</p>
+                }
+            </li>
+            }
+        </ol>
+
+        <div class="actions">
+            <a routerLink="/recursos" class="btn btn--primary">Ir a buscar recursos</a>
+            <a routerLink="/" class="btn btn--secondary">Volver al inicio</a>
+        </div>
+
+    </section>
+
+    <section class="guide-section" aria-labelledby="menu-titulo">
+
+        <h2 id="menu-titulo">Las secciones del menú</h2>
+
+        <p class="section-intro">
+            El menú superior está siempre disponible. En el móvil se abre con el botón de las tres rayas.
+        </p>
+
+        <ul class="sections">
+            @for (seccion of secciones; track seccion.ruta) {
+            <li>
+                <a [routerLink]="seccion.ruta">{{ seccion.nombre }}</a>
+                <span>{{ seccion.texto }}</span>
+            </li>
+            }
+        </ul>
+
+    </section>
+
+    <section class="guide-section" aria-labelledby="terminos-titulo">
+
+        <h2 id="terminos-titulo">Dos palabras que verás mucho</h2>
+
+        <dl class="terms">
+            <div>
+                <dt>Categoría</dt>
+                <dd>El tema del que se ocupa un recurso: empleo, vivienda, salud, formación…</dd>
+            </div>
+            <div>
+                <dt>Colectivo</dt>
+                <dd>El grupo de personas al que se dirige: infancia, mayores, mujeres, migrantes…</dd>
+            </div>
+        </dl>
+
+    </section>
+
+    <section class="guide-section" aria-labelledby="ayuda-titulo">
+
+        <h2 id="ayuda-titulo">Consejos</h2>
+
+        <ul class="tips">
+            <li>Prueba con una sola palabra: es más probable que coincida.</li>
+            <li>Combina Categoría y Colectivo para afinar, por ejemplo «Empleo» y «Juventud».</li>
+            <li>Puedes moverte por toda la web con el teclado: Tab para avanzar, Intro para abrir.</li>
+        </ul>
+
+    </section>
+
+</main>

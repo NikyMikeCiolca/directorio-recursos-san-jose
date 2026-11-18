@@ -1,1 +1,214 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  color-scheme: light;
+
+  /* Colores */
+  --primary: #173b35;
+  --primary-light: #24564a;
+  --primary-hover: #102e29;
+
+  --secondary: #ddebe5;
+  --accent: #c58a45;
+  --accent-light: #f5eadb;
+
+  --background: #f5f6f3;
+  --surface: #ffffff;
+  --surface-soft: #f0f4f1;
+
+  --text: #26342f;
+  --text-secondary: #5f7067;
+  --text-muted: #718078;
+
+  --border: #dce5df;
+  --border-strong: #bdccc2;
+
+  /* Tipografía */
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Manrope', sans-serif;
+
+  /* Tamaños */
+  --container-width: 1200px;
+  --header-height: 76px;
+
+  /* Bordes */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(23, 59, 53, 0.05);
+  --shadow-md: 0 8px 24px rgba(23, 59, 53, 0.09);
+  --shadow-lg: 0 16px 40px rgba(23, 59, 53, 0.12);
+
+  /* Transiciones */
+  --transition: 180ms ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+  scrollbar-color: var(--primary-light) #edf1ed;
+  scrollbar-width: thin;
+}
+
+body {
+  min-width: 320px;
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--primary);
+  font-family: var(--font-heading);
+  line-height: 1.25;
+}
+
+p {
+  margin-top: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+a,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Foco visible para teclado */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Selección de texto */
+::selection {
+  color: #ffffff;
+  background: var(--primary-light);
+}
+
+/* Barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #edf1ed;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a8bbb0;
+  border: 2px solid #edf1ed;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-light);
+}
+
+/* Selección de opciones */
+select {
+  color: var(--text);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+select:hover {
+  border-color: var(--border-strong);
+}
+
+select:focus {
+  border-color: var(--primary-light);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(36, 86, 74, 0.13);
+}
+
+select option {
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* Campos de formulario */
+input,
+textarea {
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:hover,
+textarea:hover {
+  border-color: var(--border-strong);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--primary-light);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(36, 86, 74, 0.13);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #89968f;
+}
+
+/* Contenedor común */
+.container {
+  width: min(100% - 48px, var(--container-width));
+  margin-inline: auto;
+}
+
+/* Animaciones: respetar preferencias del usuario */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 32px, var(--container-width));
+  }
+}

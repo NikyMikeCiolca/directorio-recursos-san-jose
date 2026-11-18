@@ -1,0 +1,31 @@
+<section class="hero">
+
+    <div class="hero-background" aria-hidden="true">
+        <div class="hero-circle"></div>
+        <div class="hero-wave hero-wave--one"></div>
+        <div class="hero-wave hero-wave--two"></div>
+    </div>
+
+    <div class="hero-content">
+
+        <span class="hero-badge">
+            Información y apoyo
+        </span>
+
+        <h1>
+            Encuentra la ayuda<br>
+            que necesitas
+        </h1>
+
+        <p>
+            Consulta los recursos y servicios sociales disponibles
+            en tu zona de forma fácil y rápida.
+        </p>
+
+        <div class="hero-search">
+            <app-search-bar (searched)="searchResources($event)" />
+        </div>
+
+    </div>
+
+</section>
