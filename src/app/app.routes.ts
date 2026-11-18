@@ -5,7 +5,7 @@ import { RecursosComponent } from '../app/pages/recursos/recursos.component';
 import { NotFoundComponent } from '../app/pages/not-found/not-found.component';
 import { DetalleServicioComponent } from '../app/pages/detalle-servicio/detalle-servicio.component';
 
-import { CategoriasComponent } from '../app/pages/categorias/categorias.component';
+import { AreasComponent } from './pages/areas/areas.component';
 import { ColectivosComponent } from '../app/pages/colectivos/colectivos.component';
 import { ComoUsarComponent } from '../app/pages/como-usar/como-usar.component';
 
@@ -25,9 +25,9 @@ export const routes: Routes = [
     },
 
     {
-        path: 'categorias',
-        component: CategoriasComponent,
-        title: 'Categorías | Directorio Social'
+        path: 'areas',
+        component: AreasComponent,
+        title: 'Áreas | Directorio Social'
     },
 
     {

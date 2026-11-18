@@ -7,12 +7,12 @@ import { createPager } from '../../shared/pagination/pager';
 import { PaginationComponent } from '../../shared/pagination/pagination.component';
 
 @Component({
-  selector: 'app-categorias',
+  selector: 'app-areas',
   imports: [RouterLink, PaginationComponent],
-  templateUrl: './categorias.component.html',
+  templateUrl: './areas.component.html',
   styleUrl: '../../shared/catalogo.component.css',
 })
-export class CategoriasComponent {
+export class AreasComponent {
 
   private readonly directorioService = inject(DirectorioService);
 
