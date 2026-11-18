@@ -3,12 +3,12 @@ import { Router, RouterLink } from '@angular/router';
 import { DirectorioService } from '../../services/directorio.service';
 
 @Component({
-  selector: 'app-category-grid',
+  selector: 'app-area-grid',
   imports: [RouterLink],
-  templateUrl: './category-grid.component.html',
-  styleUrl: './category-grid.component.css',
+  templateUrl: './area-grid.component.html',
+  styleUrl: './area-grid.component.css',
 })
-export class CategoryGridComponent {
+export class AreaGridComponent {
 
   private readonly directorio = inject(DirectorioService);
   private readonly router = inject(Router);
