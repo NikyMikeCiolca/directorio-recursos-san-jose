@@ -79,6 +79,15 @@
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
+.catalog-card {
+    scroll-margin-top: 100px;
+}
+
+.catalog-card:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
 .catalog-card:hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-md);

@@ -2,13 +2,17 @@
 
     <div class="resource-content">
 
+        @if (entidad()?.nombre !== resource().nombre) {
         <span class="entity-name">
             {{ entidad()?.nombre }}
         </span>
+        }
 
         <h3>{{ resource().nombre }}</h3>
 
+        @if (resource().descripcion) {
         <p>{{ resource().descripcion }}</p>
+        }
 
         <div class="tags">
 

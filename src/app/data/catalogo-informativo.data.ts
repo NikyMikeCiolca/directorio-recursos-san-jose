@@ -104,14 +104,6 @@ export const INFORMACION_CATEGORIAS: Record<string, InformacionCatalogo> = {
         url: 'https://www.boe.es/eli/es-ar/l/2009/06/30/5',
         icono: 'bi-exclamation-triangle'
     },
-    'cat-ayudas': {
-        descripcion: 'Reúne recursos de información, orientación y tramitación de ayudas y prestaciones económicas.',
-        ambito: 'Prestaciones y ayudas económicas',
-        fuente: 'Ley 5/2009, de Servicios Sociales de Aragón.',
-        referencia: 'Artículos 10, 35 y 36',
-        url: 'https://www.boe.es/eli/es-ar/l/2009/06/30/5',
-        icono: 'bi-cash-coin'
-    },
     'cat-prestaciones': {
         descripcion: 'Agrupa servicios de apoyo que se prestan en el domicilio de la persona, favoreciendo su autonomía y su permanencia en el entorno habitual.',
         ambito: 'Atención en el domicilio',
@@ -136,8 +128,16 @@ export const INFORMACION_CATEGORIAS: Record<string, InformacionCatalogo> = {
         url: 'https://www.boe.es/eli/es/lo/1996/01/15/1',
         icono: 'bi-shield-check'
     },
+    'cat-violencia-genero': {
+        descripcion: 'Reúne recursos de información, atención y acompañamiento a mujeres que sufren violencia de género.',
+        ambito: 'Protección integral frente a la violencia de género',
+        fuente: 'Ley Orgánica 1/2004, de 28 de diciembre, de Medidas de Protección Integral contra la Violencia de Género.',
+        referencia: 'Consultar el texto completo',
+        url: 'https://www.boe.es/eli/es/lo/2004/12/28/1/con',
+        icono: 'bi-shield-exclamation'
+    },
     'cat-necesidades-basicas': {
-        descripcion: 'Reúne recursos relacionados con la cobertura de necesidades básicas como la alimentación o la higiene, y la atención de situaciones de necesidad social.',
+        descripcion: 'Reúne recursos relacionados con la cobertura de necesidades básicas como la alimentación o la higiene, la gestión de ayudas económicas y la atención de situaciones de necesidad social.',
         ambito: 'Necesidades básicas y atención social',
         fuente: 'Ley 5/2009, de Servicios Sociales de Aragón.',
         referencia: 'Artículos 10, 35 y 36',

@@ -1,7 +1,7 @@
 export interface Entidad {
     id: string;
     nombre: string;
-    descripcion: string;
+    descripcion?: string;
     web?: string;
     telefono?: string;
     email?: string;
@@ -13,7 +13,7 @@ export interface Servicio {
     entidadId: string;
 
     nombre: string;
-    descripcion: string;
+    descripcion?: string;
 
     categoriaIds: string[];
     colectivoIds: string[];

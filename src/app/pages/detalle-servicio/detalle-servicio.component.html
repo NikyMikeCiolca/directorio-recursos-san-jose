@@ -19,7 +19,9 @@
         </p>
 
         <section class="detail-section">
-            <h2>Áreas</h2>
+            <h2>Áreas de intervención</h2>
+
+            <p class="tags-hint">Pulsa un área para ver qué incluye.</p>
 
             <div class="tags">
                 @for (categoria of categorias(); track categoria.id) {
@@ -43,7 +45,9 @@
 
             <h3>{{ entidad()?.nombre }}</h3>
 
+            @if (entidad()?.descripcion) {
             <p>{{ entidad()?.descripcion }}</p>
+            }
 
             @if (entidad()?.direccion) {
             <p>Dirección: {{ entidad()?.direccion }}</p>

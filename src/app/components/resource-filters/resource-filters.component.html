@@ -10,11 +10,11 @@
 
     <div class="filter-group">
 
-        <label for="category-filter">Categoría</label>
+        <label for="category-filter">Área</label>
 
         <select id="category-filter" [value]="selectedCategory()"
             (change)="categoryChange.emit($any($event.target).value)">
-            <option value="">Todas las categorías</option>
+            <option value="">Todas las áreas</option>
 
             @for (categoria of categorias(); track categoria.id) {
             <option [value]="categoria.id">

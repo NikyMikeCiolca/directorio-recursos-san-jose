@@ -58,8 +58,10 @@ export class RecursosComponent {
 
       const matchesText = !term || [
         servicio.nombre,
-        servicio.descripcion,
-        entidad?.nombre ?? ''
+        servicio.descripcion ?? '',
+        entidad?.nombre ?? '',
+        ...servicio.categoriaIds.map(id => this.directorio.getCategoria(id)?.nombre ?? ''),
+        ...servicio.colectivoIds.map(id => this.directorio.getColectivo(id)?.nombre ?? '')
       ].some(value => normalizar(value).includes(term));
 
       const matchesCategory =
